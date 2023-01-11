@@ -1,4 +1,4 @@
-# flutter_case_deneme_2
+# Flutter Film Search and Show Details Case Solution
 
 A new Flutter project.
 
