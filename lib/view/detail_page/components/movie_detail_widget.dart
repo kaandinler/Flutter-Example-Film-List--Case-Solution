@@ -4,7 +4,7 @@ import 'package:flutter_case_deneme_2/core/constants/constants.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/components/movie_info_widget.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/components/movie_poster_widget.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_view_model.dart';
-import 'package:share_plus/share_plus.dart';
+import 'share_button_widget.dart';
 
 class MovieDetailWidget extends StatelessWidget {
   final MovieDetailViewModel movie;
@@ -34,28 +34,12 @@ class MovieDetailWidget extends StatelessWidget {
                 color: kPrimaryColor,
                 data: movie.released ?? "N/A",
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: TextButton(
-                  onPressed: () {
-                    Share.share("Check out this movie: ${movie.title}");
-                  },
-                  child: const Icon(Icons.share),
-                  style: TextButton.styleFrom(
-                    minimumSize: const Size(70, 70),
-                    backgroundColor: Colors.white,
-                    foregroundColor: kPrimaryColor,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                  ),
-                ),
-              )
+              ShareButtonWidget(title: movie.title ?? "N/A"),
             ],
           ),
         ],
       ),
-      SizedBox(height: kDefaultPadding / 2),
+      const SizedBox(height: kDefaultPadding / 2),
       SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: MovieInformationWidget(
