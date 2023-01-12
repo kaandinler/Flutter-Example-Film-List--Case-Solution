@@ -19,8 +19,8 @@ class MovieDetailsRightButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
       child: Container(
-        height: 70,
-        width: 70,
+        height: 74,
+        width: 74,
         padding: const EdgeInsets.all(kDefaultPadding / 2),
         margin: EdgeInsets.symmetric(vertical: screenHeight(context) * 0.03),
         decoration: BoxDecoration(
