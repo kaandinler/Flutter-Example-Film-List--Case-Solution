@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Movie Search App'),
+          backgroundColor: kPrimaryColor,
         ),
         body: Container(
           padding: EdgeInsets.all(kDefaultPadding),
@@ -50,6 +51,7 @@ class _HomePageState extends State<HomePage> {
                     if (value.isNotEmpty) {
                       // provider.fetchMovies(value);
                       //if there is an error, it will be caught by catchError which will show a snackbar
+                      value = value.trim();
                       provider
                           .fetchMovies(value)
                           .then((value) {})

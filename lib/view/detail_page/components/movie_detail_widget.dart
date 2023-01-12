@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_case_deneme_2/core/components/movie_details_right_button.dart';
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
+import 'package:flutter_case_deneme_2/view/detail_page/components/movie_info_widget.dart';
+import 'package:flutter_case_deneme_2/view/detail_page/components/movie_poster_widget.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_view_model.dart';
 
 class MovieDetailWidget extends StatelessWidget {
@@ -9,38 +12,41 @@ class MovieDetailWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(kDefaultPadding),
-      child: Column(
+    return Column(children: [
+      Row(
         children: [
-          Container(
-            width: double.infinity,
-            height: 300,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: NetworkImage(movie.poster),
-                fit: BoxFit.cover,
+          MoviePosterWidget(movie: movie),
+          Column(
+            children: [
+              MovieDetailsRightButton(
+                icon: const Icon(Icons.star),
+                color: kPrimaryColor,
+                data: "IMDB ${movie.imdbRating}",
               ),
-            ),
-          ),
-          SizedBox(height: kDefaultPadding),
-          Text(
-            movie.title,
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          SizedBox(height: kDefaultPadding / 2),
-          Text(
-            movie.year,
-            style: TextStyle(color: kTextColor),
-          ),
-          SizedBox(height: kDefaultPadding),
-          Text(
-            movie.plot,
-            style: TextStyle(color: kTextColor),
+              MovieDetailsRightButton(
+                icon: const Icon(Icons.family_restroom),
+                color: kPrimaryColor,
+                data: movie.rated ?? "N/A",
+              ),
+              MovieDetailsRightButton(
+                icon: const Icon(Icons.date_range),
+                color: kPrimaryColor,
+                data: movie.released ?? "N/A",
+              ),
+            ],
           ),
         ],
       ),
-    );
+      SizedBox(height: kDefaultPadding / 2),
+      SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: MovieInformationWidget(
+          actors: movie.actors,
+          plot: movie.plot,
+          director: movie.director,
+          awards: movie.awards,
+        ),
+      )
+    ]);
   }
 }

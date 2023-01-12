@@ -5,59 +5,59 @@ class MovieDetailViewModel {
 
   MovieDetailViewModel({required this.movieDetail});
 
-  String get title {
+  String? get title {
     return movieDetail.title;
   }
 
-  String get year {
+  String? get year {
     return movieDetail.year;
   }
 
-  String get rated {
+  String? get rated {
     return movieDetail.rated;
   }
 
-  String get released {
+  String? get released {
     return movieDetail.released;
   }
 
-  String get runtime {
+  String? get runtime {
     return movieDetail.runtime;
   }
 
-  String get genre {
+  String? get genre {
     return movieDetail.genre;
   }
 
-  String get director {
+  String? get director {
     return movieDetail.director;
   }
 
-  String get writer {
+  String? get writer {
     return movieDetail.writer;
   }
 
-  String get actors {
+  String? get actors {
     return movieDetail.actors;
   }
 
-  String get plot {
+  String? get plot {
     return movieDetail.plot;
   }
 
-  String get language {
+  String? get language {
     return movieDetail.language;
   }
 
-  String get country {
+  String? get country {
     return movieDetail.country;
   }
 
-  String get awards {
+  String? get awards {
     return movieDetail.awards;
   }
 
-  String get poster {
+  String? get poster {
     return movieDetail.poster;
   }
 
@@ -65,43 +65,43 @@ class MovieDetailViewModel {
     return movieDetail.ratings;
   }
 
-  String get metascore {
+  String? get metascore {
     return movieDetail.metascore;
   }
 
-  String get imdbRating {
+  String? get imdbRating {
     return movieDetail.imdbRating;
   }
 
-  String get imdbVotes {
+  String? get imdbVotes {
     return movieDetail.imdbVotes;
   }
 
-  String get imdbID {
+  String? get imdbID {
     return movieDetail.imdbID;
   }
 
-  String get type {
+  String? get type {
     return movieDetail.type;
   }
 
-  String get dVD {
+  String? get dVD {
     return movieDetail.dVD;
   }
 
-  String get boxOffice {
+  String? get boxOffice {
     return movieDetail.boxOffice;
   }
 
-  String get production {
+  String? get production {
     return movieDetail.production;
   }
 
-  String get website {
+  String? get website {
     return movieDetail.website;
   }
 
-  String get response {
+  String? get response {
     return movieDetail.response;
   }
 }

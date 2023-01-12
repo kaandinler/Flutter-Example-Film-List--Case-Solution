@@ -18,7 +18,10 @@ class WebService {
         return [];
       }
       final Iterable list = result["Search"];
-      return list.map((movie) => Movie.fromJson(movie)).toList();
+
+//difference between .sort and ..sort is that .sort returns a new list, while ..sort sorts the list in place NOTE THAT.
+      return list.map((movie) => Movie.fromJson(movie)).toList()
+        ..sort((a, b) => b.year.compareTo(a.year));
     } else {
       throw Exception('Failed to load movies');
     }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_case_deneme_2/core/constants/constants.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/components/movie_detail_widget.dart';
-import 'package:flutter_case_deneme_2/view/detail_page/model/movie_detail_model.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_fetch_view_model.dart';
-import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_view_model.dart';
 import 'package:provider/provider.dart';
 
 class DetailsPage extends StatelessWidget {
@@ -18,7 +17,11 @@ class DetailsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(imdbID),
+        title: Text(
+          "${provider_movDet.movieDetailModel.title}",
+          overflow: TextOverflow.ellipsis,
+        ),
+        backgroundColor: kPrimaryColor,
       ),
       body: SingleChildScrollView(
         child: MovieDetailWidget(movie: provider_movDet.movieDetailModel),

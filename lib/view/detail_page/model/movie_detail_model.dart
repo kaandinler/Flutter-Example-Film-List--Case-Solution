@@ -1,29 +1,29 @@
 class MovieDetail {
-  String title;
-  String year;
-  String rated;
-  String released;
-  String runtime;
-  String genre;
-  String director;
-  String writer;
-  String actors;
-  String plot;
-  String language;
-  String country;
-  String awards;
-  String poster;
+  String? title;
+  String? year;
+  String? rated;
+  String? released;
+  String? runtime;
+  String? genre;
+  String? director;
+  String? writer;
+  String? actors;
+  String? plot;
+  String? language;
+  String? country;
+  String? awards;
+  String? poster;
   List<Ratings>? ratings;
-  String metascore;
-  String imdbRating;
-  String imdbVotes;
-  String imdbID;
-  String type;
-  String dVD;
-  String boxOffice;
-  String production;
-  String website;
-  String response;
+  String? metascore;
+  String? imdbRating;
+  String? imdbVotes;
+  String? imdbID;
+  String? type;
+  String? dVD;
+  String? boxOffice;
+  String? production;
+  String? website;
+  String? response;
 
   MovieDetail(
       {required this.title,
@@ -52,7 +52,7 @@ class MovieDetail {
       required this.website,
       required this.response});
 
-  factory MovieDetail.fromJson(Map<String, dynamic> json) {
+  factory MovieDetail.fromJson(Map<String?, dynamic> json) {
     return MovieDetail(
       title: json['Title'],
       year: json['Year'],
@@ -84,8 +84,8 @@ class MovieDetail {
     );
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map<String?, dynamic> toJson() {
+    final Map<String?, dynamic> data = new Map<String?, dynamic>();
     data['Title'] = this.title;
     data['Year'] = this.year;
     data['Rated'] = this.rated;
@@ -118,18 +118,18 @@ class MovieDetail {
 }
 
 class Ratings {
-  late String source;
-  late String value;
+  late String? source;
+  late String? value;
 
   Ratings({required this.source, required this.value});
 
-  Ratings.fromJson(Map<String, dynamic> json) {
+  Ratings.fromJson(Map<String?, dynamic> json) {
     source = json['Source'];
     value = json['Value'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+  Map<String?, dynamic> toJson() {
+    final Map<String?, dynamic> data = new Map<String?, dynamic>();
     data['Source'] = this.source;
     data['Value'] = this.value;
     return data;
