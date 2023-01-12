@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
+import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_fetch_view_model.dart';
 import 'package:flutter_case_deneme_2/view/home/components/movie_list_widget.dart';
 import 'package:flutter_case_deneme_2/view/home/view_model/movie_list_view_model.dart';
 import 'package:provider/provider.dart';

@@ -17,4 +17,10 @@ void main() {
         .get(Uri.parse('http://www.omdbapi.com/?s=batman&apikey=5b5927c3'));
     expect(response.statusCode, 200);
   });
+
+  test("status code 200 for det", () async {
+    final response_details = await http
+        .get(Uri.parse('http://www.omdbapi.com/?i=tt0372784&apikey=5b5927c3'));
+    expect(response_details.statusCode, 200);
+  });
 }

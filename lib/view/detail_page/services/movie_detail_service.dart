@@ -5,18 +5,20 @@ import 'package:http/http.dart' as http;
 class MovieDetailService {
   final String apiKey = '5b5927c3';
   final String baseUrl = 'http://www.omdbapi.com/';
+  // final String deneme = 'http://www.omdbapi.com/?i=tt0372784';
 
-  Future<List<MovieDetail>> fetchMovieDetail(String keyword) async {
+  Future<List<MovieDetail>> fetchMovieDetail(String imdbID) async {
     final response =
-        await http.get(Uri.parse('$baseUrl?s=$keyword&apikey=$apiKey'));
+        await http.get(Uri.parse('$baseUrl?i=$imdbID&apikey=$apiKey'));
 
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body) ?? {};
-      //if the search result is empty, return an empty list
-      if (result["Search"] is! Iterable) {
+      //if the "Title" is null, result is empty, return an empty list
+      if (result["Title"] == null) {
         return [];
       }
-      final Iterable list = result["Search"];
+
+      final Iterable list = [result];
       return list
           .map((movieDetail) => MovieDetail.fromJson(movieDetail))
           .toList();

@@ -1,88 +1,87 @@
 class MovieDetail {
-  String? title;
-  String? year;
-  String? rated;
-  String? released;
-  String? runtime;
-  String? genre;
-  String? director;
-  String? writer;
-  String? actors;
-  String? plot;
-  String? language;
-  String? country;
-  String? awards;
-  String? poster;
+  String title;
+  String year;
+  String rated;
+  String released;
+  String runtime;
+  String genre;
+  String director;
+  String writer;
+  String actors;
+  String plot;
+  String language;
+  String country;
+  String awards;
+  String poster;
   List<Ratings>? ratings;
-  String? metascore;
-  String? imdbRating;
-  String? imdbVotes;
-  String? imdbID;
-  String? type;
-  String? dVD;
-  String? boxOffice;
-  String? production;
-  String? website;
-  String? response;
+  String metascore;
+  String imdbRating;
+  String imdbVotes;
+  String imdbID;
+  String type;
+  String dVD;
+  String boxOffice;
+  String production;
+  String website;
+  String response;
 
   MovieDetail(
-      {this.title,
-      this.year,
-      this.rated,
-      this.released,
-      this.runtime,
-      this.genre,
-      this.director,
-      this.writer,
-      this.actors,
-      this.plot,
-      this.language,
-      this.country,
-      this.awards,
-      this.poster,
+      {required this.title,
+      required this.year,
+      required this.rated,
+      required this.released,
+      required this.runtime,
+      required this.genre,
+      required this.director,
+      required this.writer,
+      required this.actors,
+      required this.plot,
+      required this.language,
+      required this.country,
+      required this.awards,
+      required this.poster,
       this.ratings,
-      this.metascore,
-      this.imdbRating,
-      this.imdbVotes,
-      this.imdbID,
-      this.type,
-      this.dVD,
-      this.boxOffice,
-      this.production,
-      this.website,
-      this.response});
+      required this.metascore,
+      required this.imdbRating,
+      required this.imdbVotes,
+      required this.imdbID,
+      required this.type,
+      required this.dVD,
+      required this.boxOffice,
+      required this.production,
+      required this.website,
+      required this.response});
 
-  MovieDetail.fromJson(Map<String, dynamic> json) {
-    title = json['Title'];
-    year = json['Year'];
-    rated = json['Rated'];
-    released = json['Released'];
-    runtime = json['Runtime'];
-    genre = json['Genre'];
-    director = json['Director'];
-    writer = json['Writer'];
-    actors = json['Actors'];
-    plot = json['Plot'];
-    language = json['Language'];
-    country = json['Country'];
-    awards = json['Awards'];
-    poster = json['Poster'];
-    if (json['Ratings'] != null) {
-      ratings = <Ratings>[];
-      json['Ratings'].forEach((v) {
-        ratings!.add(new Ratings.fromJson(v));
-      });
-    }
-    metascore = json['Metascore'];
-    imdbRating = json['imdbRating'];
-    imdbVotes = json['imdbVotes'];
-    imdbID = json['imdbID'];
-    type = json['Type'];
-    dVD = json['DVD'];
-    boxOffice = json['BoxOffice'];
-    production = json['Production'];
-    website = json['Website'];
-    response = json['Response'];
+  factory MovieDetail.fromJson(Map<String, dynamic> json) {
+    return MovieDetail(
+      title: json['Title'],
+      year: json['Year'],
+      rated: json['Rated'],
+      released: json['Released'],
+      runtime: json['Runtime'],
+      genre: json['Genre'],
+      director: json['Director'],
+      writer: json['Writer'],
+      actors: json['Actors'],
+      plot: json['Plot'],
+      language: json['Language'],
+      country: json['Country'],
+      awards: json['Awards'],
+      poster: json['Poster'],
+      ratings: json['Ratings'] != null
+          ? (json['Ratings'] as List).map((i) => Ratings.fromJson(i)).toList()
+          : null,
+      metascore: json['Metascore'],
+      imdbRating: json['imdbRating'],
+      imdbVotes: json['imdbVotes'],
+      imdbID: json['imdbID'],
+      type: json['Type'],
+      dVD: json['DVD'],
+      boxOffice: json['BoxOffice'],
+      production: json['Production'],
+      website: json['Website'],
+      response: json['Response'],
+    );
   }
 
   Map<String, dynamic> toJson() {
@@ -119,10 +118,10 @@ class MovieDetail {
 }
 
 class Ratings {
-  String? source;
-  String? value;
+  late String source;
+  late String value;
 
-  Ratings({this.source, this.value});
+  Ratings({required this.source, required this.value});
 
   Ratings.fromJson(Map<String, dynamic> json) {
     source = json['Source'];

@@ -10,10 +10,8 @@ class MovieListViewModel extends ChangeNotifier {
     //if the search result is empty, return an error
     if (results.isEmpty) {
       return Future.error('No movies found for $keyword');
-    } else {
-      this.movies =
-          results.map((movie) => MovieViewModel(movie: movie)).toList();
-      notifyListeners();
     }
+    movies = results.map((movie) => MovieViewModel(movie: movie)).toList();
+    notifyListeners();
   }
 }
