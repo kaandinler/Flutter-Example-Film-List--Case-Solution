@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_case_deneme_2/core/components/movie_details_right_button.dart';
+import 'package:flutter_case_deneme_2/view/detail_page/components/movie_details_right_button.dart';
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/components/movie_info_widget.dart';
 import 'package:flutter_case_deneme_2/view/detail_page/components/movie_poster_widget.dart';
