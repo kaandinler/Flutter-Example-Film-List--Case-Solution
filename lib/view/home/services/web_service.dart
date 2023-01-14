@@ -1,11 +1,13 @@
 import 'dart:convert';
 
+import 'package:flutter_case_deneme_2/core/components/flavor_config.dart';
+
 import '../model/movie_model.dart';
 import 'package:http/http.dart' as http;
 
 class WebService {
-  final String apiKey = '5b5927c3';
-  final String baseUrl = 'http://www.omdbapi.com/';
+  final String apiKey = FlavorConfig.instance.values.apiKey;
+  final String baseUrl = FlavorConfig.instance.values.baseUrl;
 
   Future<List<Movie>> fetchMovies(String keyword) async {
     final response =
