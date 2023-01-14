@@ -20,7 +20,7 @@ class ShareButtonWidget extends StatelessWidget {
         },
         child: const Icon(Icons.share),
         style: TextButton.styleFrom(
-          minimumSize: const Size(70, 70),
+          minimumSize: const Size(72, 72),
           backgroundColor: Colors.white,
           foregroundColor: kPrimaryColor,
           shape: const RoundedRectangleBorder(
