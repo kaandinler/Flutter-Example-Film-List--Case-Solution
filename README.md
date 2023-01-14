@@ -1,6 +1,10 @@
 # Flutter Film Search and Show Details Case Solution
 
-A new Flutter project.
+run dev
+flutter run --flavor dev -t lib/main_dev.dart
+
+run stage
+flutter run --flavor stage -t lib/main_stage.dart
 
 ## Getting Started
 
