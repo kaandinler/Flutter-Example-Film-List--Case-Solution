@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:flutter_case_deneme_2/main.dart';
+import 'package:flutter_case_deneme_2/main_common.dart';
 
 void main() {
   test("status code 200", () async {
