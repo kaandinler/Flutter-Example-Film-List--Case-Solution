@@ -13,11 +13,12 @@ void main() {
         appTitle: "Development MovieListCase",
         theme: ThemeData(
           primarySwatch: Colors.red,
+          brightness: Brightness.light,
         ),
         appId: "com.example.flutter_case_deneme_2.dev",
         bundleId: "com.example.flutter_case_deneme_2.dev",
-        baseUrl: 'https://dev.example.com',
-        apiKey: 'dev'),
+        baseUrl: 'http://www.omdbapi.com/',
+        apiKey: '5b5927c3'),
   );
 
   mainCommon();
