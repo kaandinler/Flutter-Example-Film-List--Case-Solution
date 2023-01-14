@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => MovieDetailFetchViewModel()),
         ],
         child: MaterialApp(
+          theme: ThemeData(
+            brightness: myFlavor.FlavorConfig.instance.values.theme.brightness,
+          ),
           home: MyHomePage(title: myFlavor.FlavorConfig.instance.name),
         ));
   }
