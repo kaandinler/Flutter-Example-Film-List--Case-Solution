@@ -5,14 +5,23 @@ import 'package:flutter_case_deneme_2/core/components/flavor_config.dart'
     as myFlavor;
 import 'package:flutter_case_deneme_2/view/home/view/home.dart';
 import 'package:flutter_case_deneme_2/view/home/view_model/movie_list_view_model.dart';
-import 'package:flutter_flavor/flutter_flavor.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
-
 import 'view/detail_page/view_model/movie_detail_fetch_view_model.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
-void mainCommon() {
+void mainCommon() async {
+  // Pass all uncaught errors to Crashlytics.
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // Pass all uncaught "fatal" errors from the framework to Crashlytics
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
   runApp(MyApp());
 }
