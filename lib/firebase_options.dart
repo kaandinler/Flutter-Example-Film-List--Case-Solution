@@ -66,7 +66,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1000891632492',
     projectId: 'my-case-project',
     storageBucket: 'my-case-project.appspot.com',
-    iosClientId: '1000891632492-grdvkeb5fgbfs9vq7urtb6dba43efn23.apps.googleusercontent.com',
+    iosClientId:
+        '1000891632492-grdvkeb5fgbfs9vq7urtb6dba43efn23.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterCaseDeneme2',
   );
 
@@ -76,7 +77,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1000891632492',
     projectId: 'my-case-project',
     storageBucket: 'my-case-project.appspot.com',
-    iosClientId: '1000891632492-grdvkeb5fgbfs9vq7urtb6dba43efn23.apps.googleusercontent.com',
+    iosClientId:
+        '1000891632492-grdvkeb5fgbfs9vq7urtb6dba43efn23.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterCaseDeneme2',
   );
 }
