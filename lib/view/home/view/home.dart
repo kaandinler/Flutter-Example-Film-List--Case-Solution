@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
                       offset: Offset(0, 10))
                 ]),
             child: TextField(
+              maxLength: 30,
               controller: _controller,
               onSubmitted: (value) {
                 if (value.isNotEmpty) {
