@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_case_deneme_2/core/constants/constants.dart';
-import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_view_model.dart';
 
 class MoviePosterWidget extends StatelessWidget {
   const MoviePosterWidget({
     Key? key,
-    required this.movie,
+    required this.imageUrl,
+    required this.height,
+    required this.width,
   }) : super(key: key);
 
-  final MovieDetailViewModel movie;
+  final String imageUrl;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: screenHeight(context) * 0.6,
-      width: screenWidth(context) * 0.75,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(45),
-          bottomRight: Radius.circular(45),
+        borderRadius: const BorderRadius.only(
+          topRight: Radius.circular(35),
+          bottomRight: Radius.circular(35),
         ),
         boxShadow: [
           BoxShadow(
@@ -29,10 +31,15 @@ class MoviePosterWidget extends StatelessWidget {
         ],
         image: DecorationImage(
             alignment: Alignment.centerLeft,
-            image: NetworkImage(movie.poster ??
-                CircularProgressIndicator(
-                  color: Colors.white,
-                ).toString()),
+            repeat: ImageRepeat.noRepeat,
+            onError: (exception, stackTrace) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Image not found"),
+                ),
+              );
+            },
+            image: NetworkImage(imageUrl),
             fit: BoxFit.fill),
       ),
     );
