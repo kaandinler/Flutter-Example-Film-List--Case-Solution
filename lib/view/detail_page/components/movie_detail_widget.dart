@@ -10,32 +10,43 @@ import 'share_button_widget.dart';
 class MovieDetailWidget extends StatelessWidget {
   final MovieDetailViewModel movie;
 
-  MovieDetailWidget({required this.movie});
+  const MovieDetailWidget({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Row(
         children: [
-          MoviePosterWidget(movie: movie),
+          MoviePosterWidget(
+              imageUrl: movie.poster ?? "",
+              height: screenHeight(context) * 0.6,
+              width: screenWidth(context) * 0.75),
           Column(
             children: [
               MovieDetailsRightButton(
-                icon: const Icon(Icons.star),
-                color: kPrimaryColor,
-                data: "IMDB ${movie.imdbRating}",
-              ),
+                  icon: const Icon(Icons.star),
+                  color: kPrimaryColor,
+                  data: "IMDB ${movie.imdbRating}",
+                  btnHeight: 72,
+                  btnWidth: 72),
               MovieDetailsRightButton(
-                icon: const Icon(Icons.family_restroom),
-                color: kPrimaryColor,
-                data: movie.rated ?? "N/A",
-              ),
+                  icon: const Icon(Icons.family_restroom),
+                  color: kPrimaryColor,
+                  data: movie.rated ?? "N/A",
+                  btnHeight: 72,
+                  btnWidth: 72),
               MovieDetailsRightButton(
                 icon: const Icon(Icons.date_range),
+                btnHeight: 72,
+                btnWidth: 72,
                 color: kPrimaryColor,
                 data: movie.released ?? "N/A",
               ),
-              ShareButtonWidget(title: movie.title ?? "N/A"),
+              ShareButtonWidget(
+                title: movie.title ?? "N/A",
+                btnHeight: 72,
+                btnWidth: 72,
+              ),
             ],
           ),
         ],
@@ -51,52 +62,8 @@ class MovieDetailWidget extends StatelessWidget {
           director: movie.director,
           awards: movie.awards,
         ),
-      )
+      ),
+      verticalSpaceSmall
     ]);
   }
-
-  // Widget buildMovieGenre(BuildContext context) {
-  //   List<String> genreList = movie.genre!.split(",");
-
-  //   return Row(
-  //     crossAxisAlignment: CrossAxisAlignment.center,
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     children: [
-  //       for (String word in genreList)
-  //         Padding(
-  //           padding: const EdgeInsets.all(8.0),
-  //           child: Container(
-  //             width: screenWidth(context) * 0.2,
-  //             padding: const EdgeInsets.all(kDefaultPadding / 2),
-  //             decoration: BoxDecoration(
-  //               color: Colors.white,
-  //               borderRadius: BorderRadius.circular(6),
-  //               boxShadow: [
-  //                 BoxShadow(
-  //                   offset: Offset(0, 10),
-  //                   blurRadius: 22,
-  //                   color: Colors.black.withOpacity(0.5),
-  //                 ),
-  //                 BoxShadow(
-  //                   offset: Offset(-5, -5),
-  //                   blurRadius: 11,
-  //                   color: Colors.white,
-  //                 )
-  //               ],
-  //             ),
-  //             child: Text(
-  //               word.trim(),
-  //               overflow: TextOverflow.ellipsis,
-  //               textAlign: TextAlign.center,
-  //               style: const TextStyle(
-  //                 fontSize: 16,
-  //                 fontWeight: FontWeight.bold,
-  //                 color: kTextColor,
-  //               ),
-  //             ),
-  //           ),
-  //         )
-  //     ],
-  //   );
-  // }
 }

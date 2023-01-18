@@ -26,16 +26,11 @@ class GenreListWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(6),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       offset: Offset(0, 10),
                       blurRadius: 22,
-                      color: Colors.black.withOpacity(0.5),
-                    ),
-                    const BoxShadow(
-                      offset: Offset(-5, -5),
-                      blurRadius: 11,
-                      color: Colors.white,
+                      color: kBoxShadowColor,
                     )
                   ],
                 ),

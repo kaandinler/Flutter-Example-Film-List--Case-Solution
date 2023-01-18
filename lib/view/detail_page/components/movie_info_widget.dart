@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
-import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_view_model.dart';
 
 class MovieInformationWidget extends StatelessWidget {
   const MovieInformationWidget({
@@ -26,17 +25,12 @@ class MovieInformationWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(6),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
-                offset: Offset(0, 10),
+                offset: const Offset(0, 10),
                 blurRadius: 22,
-                color: kPrimaryColor.withOpacity(0.23),
+                color: kBoxShadowColor,
               ),
-              BoxShadow(
-                offset: Offset(-5, -5),
-                blurRadius: 11,
-                color: Colors.white,
-              )
             ],
           ),
           child: Text(
@@ -55,17 +49,12 @@ class MovieInformationWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(6),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
-                offset: Offset(0, 10),
-                blurRadius: 5,
-                color: kPrimaryColor.withOpacity(0.23),
+                offset: Offset(0, 20),
+                blurRadius: 11,
+                color: kBoxShadowColor,
               ),
-              BoxShadow(
-                offset: Offset(-5, -5),
-                blurRadius: 5,
-                color: Colors.white,
-              )
             ],
           ),
           child: Text(
@@ -81,17 +70,12 @@ class MovieInformationWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(6),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 offset: Offset(0, 10),
                 blurRadius: 5,
-                color: kPrimaryColor.withOpacity(0.23),
+                color: kBoxShadowColor,
               ),
-              BoxShadow(
-                offset: Offset(-5, -5),
-                blurRadius: 5,
-                color: Colors.white,
-              )
             ],
           ),
           child: Text(
@@ -107,17 +91,12 @@ class MovieInformationWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(6),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 offset: Offset(0, 10),
                 blurRadius: 5,
-                color: kPrimaryColor.withOpacity(0.23),
+                color: kBoxShadowColor,
               ),
-              BoxShadow(
-                offset: Offset(-5, -5),
-                blurRadius: 5,
-                color: Colors.white,
-              )
             ],
           ),
           child: Text(
