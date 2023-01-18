@@ -8,6 +8,8 @@ import 'package:flutter_case_deneme_2/view/home/view_model/movie_list_view_model
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     final provider = Provider.of<MovieListViewModel>(context);
 
     return Container(
-      padding: EdgeInsets.all(kDefaultPadding),
+      padding: const EdgeInsets.all(kDefaultPadding),
       width: screenWidthPercentage(context, percentage: 1),
       height: screenHeightPercentage(context, percentage: 1),
       child: Column(
@@ -32,11 +34,12 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   const BoxShadow(
-                      color: Color.fromRGBO(143, 148, 251, .2),
+                      color: kBoxShadowColor,
                       blurRadius: 20.0,
                       offset: Offset(0, 10))
                 ]),
             child: TextField(
+              autocorrect: true,
               controller: _controller,
               onSubmitted: (value) {
                 if (value.isNotEmpty) {
@@ -54,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                 }
               },
               decoration: InputDecoration(
+                  icon: const Icon(Icons.search, color: kPrimaryColor),
                   border: InputBorder.none,
                   hintText: "Search",
                   hintStyle: TextStyle(color: Colors.grey[400])),

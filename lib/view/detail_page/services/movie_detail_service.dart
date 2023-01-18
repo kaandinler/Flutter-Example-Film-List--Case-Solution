@@ -28,6 +28,9 @@ class MovieDetailService {
         throw Exception('Failed to load movie details');
       }
     } on SocketException catch (e) {
+      //if there is no internet connection, return an empty list, it will be handled in the free time.
+      return [];
+    } catch (e) {
       return [];
     }
   }
