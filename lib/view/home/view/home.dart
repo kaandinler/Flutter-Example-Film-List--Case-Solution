@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
+// ignore: unused_import
 import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_fetch_view_model.dart';
 import 'package:flutter_case_deneme_2/view/home/components/movie_list_widget.dart';
 import 'package:flutter_case_deneme_2/view/home/view_model/movie_list_view_model.dart';
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: kDefaultPadding / 2),
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -36,7 +37,6 @@ class _HomePageState extends State<HomePage> {
                       offset: Offset(0, 10))
                 ]),
             child: TextField(
-              maxLength: 30,
               controller: _controller,
               onSubmitted: (value) {
                 if (value.isNotEmpty) {
