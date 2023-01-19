@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_case_deneme_2/core/components/flavor_config.dart';
 
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
 // ignore: unused_import
@@ -32,8 +33,8 @@ class _HomePageState extends State<HomePage> {
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  const BoxShadow(
+                boxShadow: const [
+                  BoxShadow(
                       color: kBoxShadowColor,
                       blurRadius: 20.0,
                       offset: Offset(0, 10))
@@ -57,7 +58,8 @@ class _HomePageState extends State<HomePage> {
                 }
               },
               decoration: InputDecoration(
-                  icon: const Icon(Icons.search, color: kPrimaryColor),
+                  icon: Icon(Icons.search,
+                      color: FlavorConfig.instance.values.theme.primaryColor),
                   border: InputBorder.none,
                   hintText: "Search",
                   hintStyle: TextStyle(color: Colors.grey[400])),
