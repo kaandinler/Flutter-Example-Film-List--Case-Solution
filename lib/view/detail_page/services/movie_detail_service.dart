@@ -9,29 +9,25 @@ class MovieDetailService {
   final String baseUrl = FlavorConfig.instance.values.baseUrl;
 
   Future<List<MovieDetail>> fetchMovieDetail(String imdbID) async {
-    try {
-      final response =
-          await http.get(Uri.parse('$baseUrl?i=$imdbID&apikey=$apiKey'));
+    final response = await http
+        .get(Uri.parse('$baseUrl?i=$imdbID&apikey=$apiKey'))
+        .catchError((error) => throw Exception('Failed to load movie details'));
 
-      if (response.statusCode == 200) {
-        final result = jsonDecode(response.body) ?? {};
-        //if the "Title" is null, result is empty, return an empty list
-        if (result["Title"] == null) {
-          return [];
-        }
-
-        final Iterable list = [result];
-        return list
-            .map((movieDetail) => MovieDetail.fromJson(movieDetail))
-            .toList();
-      } else {
-        throw Exception('Failed to load movie details');
+    if (response.statusCode == 200) {
+      final result = jsonDecode(response.body) ?? {};
+      //if the "Title" is null, result is empty, return an empty list
+      if (result["Title"] == null) {
+        return [];
       }
-    } on SocketException catch (e) {
-      //if there is no internet connection, return an empty list, it will be handled in the free time.
-      return [];
-    } catch (e) {
-      return [];
+
+      final Iterable list = [result];
+      return list
+          .map((movieDetail) => MovieDetail.fromJson(movieDetail))
+          .toList();
+    } else {
+      throw Exception('Failed to load movie details');
     }
+
+    //if there is no internet connection, return an empty list, it will be handled in the free time.
   }
 }
