@@ -26,7 +26,7 @@ class MovieListWidget extends StatelessWidget {
               ),
             );
           },
-          contentPadding: EdgeInsets.all(kDefaultPadding / 2),
+          contentPadding: const EdgeInsets.all(kDefaultPadding / 4),
           leading: Container(
             width: 60,
             height: 100,
