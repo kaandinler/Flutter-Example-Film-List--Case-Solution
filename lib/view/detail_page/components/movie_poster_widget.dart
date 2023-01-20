@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_case_deneme_2/core/constants/constants.dart';
 
 class MoviePosterWidget extends StatelessWidget {
   const MoviePosterWidget({
@@ -22,26 +24,42 @@ class MoviePosterWidget extends StatelessWidget {
           topRight: Radius.circular(35),
           bottomRight: Radius.circular(35),
         ),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            offset: const Offset(0, 10),
+            offset: Offset(0, 10),
             blurRadius: 60,
-            color: Colors.black.withOpacity(0.33),
+            color: kBoxShadowColor,
           ),
         ],
         image: DecorationImage(
             alignment: Alignment.centerLeft,
             repeat: ImageRepeat.noRepeat,
-            onError: (exception, stackTrace) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text("Image not found"),
-                ),
-              );
-            },
             image: NetworkImage(imageUrl),
+            //onError: is removed.
+            onError: (exception, stackTrace) => {
+                  print("Error occured while loading image: $exception"),
+                  print("Stacktrace: $stackTrace"),
+                },
             fit: BoxFit.fill),
       ),
+      // child: FadeInImage.assetNetwork(
+      //   placeholder: 'assets/images/telegram.png',
+      //   image: imageUrl,
+      //   fadeInDuration: const Duration(seconds: 2),
+      //   fit: BoxFit.fill,
+      // ),
+      // child: CachedNetworkImage(
+      //   imageUrl: imageUrl,
+      //   height: height,
+      //   width: width,
+
+      //   placeholder: (context, imageUrl) => const CircularProgressIndicator(),
+      //   // progressIndicatorBuilder: (context, url, downloadProgress) =>
+      //   //     CircularProgressIndicator(value: downloadProgress.progress),
+      //   errorWidget: (context, url, error) => const Icon(Icons.error),
+
+      //   fit: BoxFit.fill,
+      // ),
     );
   }
 }
