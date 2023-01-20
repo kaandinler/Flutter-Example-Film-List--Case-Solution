@@ -10,8 +10,13 @@ class WebService {
   final String baseUrl = FlavorConfig.instance.values.baseUrl;
 
   Future<List<Movie>> fetchMovies(String keyword) async {
-    final response =
-        await http.get(Uri.parse('$baseUrl?s=$keyword&apikey=$apiKey'));
+    final response = await http
+        .get(Uri.parse('$baseUrl?s=$keyword&apikey=$apiKey'))
+        .catchError((onError) {
+      throw Exception('Failed to load movies');
+    }).timeout(const Duration(seconds: 5), onTimeout: () {
+      throw Exception('Failed to load movies');
+    });
 
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body) ?? {};

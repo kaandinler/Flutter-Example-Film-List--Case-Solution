@@ -12,7 +12,6 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final providerMovDet = Provider.of<MovieDetailFetchViewModel>(context);
-
     providerMovDet.fetchMovieDetail(imdbID);
 
     return Scaffold(

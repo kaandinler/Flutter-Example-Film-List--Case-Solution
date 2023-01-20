@@ -6,7 +6,7 @@ import 'package:flutter_case_deneme_2/view/home/view_model/movie_view_model.dart
 class MovieListWidget extends StatelessWidget {
   final List<MovieViewModel> movies;
 
-  MovieListWidget({required this.movies});
+  const MovieListWidget({super.key, required this.movies});
 
   @override
   Widget build(BuildContext context) {
