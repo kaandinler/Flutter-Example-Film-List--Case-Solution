@@ -6,17 +6,14 @@ class FlavorValues {
   final String appTitle;
   final String bundleId;
   final String appId;
-  final String baseUrl;
-  final String apiKey;
   final ThemeData theme;
 
-  FlavorValues(
-      {required this.appTitle,
-      required this.theme,
-      required this.bundleId,
-      required this.appId,
-      required this.baseUrl,
-      required this.apiKey});
+  FlavorValues({
+    required this.appTitle,
+    required this.theme,
+    required this.bundleId,
+    required this.appId,
+  });
 }
 
 class FlavorConfig {

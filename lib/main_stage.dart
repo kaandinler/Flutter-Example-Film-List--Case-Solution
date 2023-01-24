@@ -13,8 +13,6 @@ void main() {
         appTitle: "Stage MovieListCase",
         bundleId: "com.example.flutter_case_deneme_2.stage",
         appId: "com.example.flutter_case_deneme_2.stage",
-        baseUrl: 'http://www.omdbapi.com/',
-        apiKey: '5b5927c3',
         theme: ThemeData(
           primarySwatch: Colors.purple,
           brightness: Brightness.light,
