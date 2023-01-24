@@ -24,28 +24,22 @@ class MovieDetailWidget extends StatelessWidget {
           Column(
             children: [
               MovieDetailsRightButton(
-                  icon: const Icon(Icons.star),
-                  color: kPrimaryColor,
-                  data: "IMDB ${movie.imdbRating}",
-                  btnHeight: 72,
-                  btnWidth: 72),
+                icon: const Icon(Icons.star),
+                color: kPrimaryColor,
+                data: "IMDB ${movie.imdbRating}",
+              ),
               MovieDetailsRightButton(
-                  icon: const Icon(Icons.family_restroom),
-                  color: kPrimaryColor,
-                  data: movie.rated ?? "N/A",
-                  btnHeight: 72,
-                  btnWidth: 72),
+                icon: const Icon(Icons.family_restroom),
+                color: kPrimaryColor,
+                data: movie.rated ?? "N/A",
+              ),
               MovieDetailsRightButton(
                 icon: const Icon(Icons.date_range),
-                btnHeight: 72,
-                btnWidth: 72,
                 color: kPrimaryColor,
                 data: movie.released ?? "N/A",
               ),
               ShareButtonWidget(
                 title: movie.title ?? "N/A",
-                btnHeight: 72,
-                btnWidth: 72,
               ),
             ],
           ),
