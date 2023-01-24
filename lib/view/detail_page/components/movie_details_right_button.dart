@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_case_deneme_2/core/constants/constants.dart';
-import 'package:flutter_case_deneme_2/view/detail_page/view_model/movie_detail_view_model.dart';
 
 class MovieDetailsRightButton extends StatelessWidget {
   const MovieDetailsRightButton({
@@ -8,23 +7,19 @@ class MovieDetailsRightButton extends StatelessWidget {
     required this.icon,
     required this.color,
     required this.data,
-    required this.btnHeight,
-    required this.btnWidth,
   }) : super(key: key);
 
   final Icon icon;
   final Color color;
   final String data;
-  final double btnHeight;
-  final double btnWidth;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
       child: Container(
-        height: btnHeight,
-        width: btnWidth,
+        height: kButtonHeight,
+        width: kButtonWidth,
         margin: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           color: Colors.white,

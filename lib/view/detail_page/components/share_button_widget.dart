@@ -6,13 +6,9 @@ class ShareButtonWidget extends StatelessWidget {
   const ShareButtonWidget({
     Key? key,
     required this.title,
-    required this.btnHeight,
-    required this.btnWidth,
   }) : super(key: key);
 
   final String title;
-  final double btnHeight;
-  final double btnWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +21,7 @@ class ShareButtonWidget extends StatelessWidget {
             Share.share("Check out this movie: $title");
           },
           style: TextButton.styleFrom(
-            fixedSize: Size(btnWidth, btnHeight),
+            fixedSize: const Size(kButtonWidth, kButtonHeight),
             backgroundColor: Colors.white,
             foregroundColor: kPrimaryColor,
             shape: const RoundedRectangleBorder(

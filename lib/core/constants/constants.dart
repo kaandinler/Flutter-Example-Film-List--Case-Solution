@@ -7,6 +7,9 @@ const kBoxShadowColor = Color.fromRGBO(143, 148, 251, .2);
 
 const double kDefaultPadding = 20.0;
 
+const double kButtonWidth = 72.0;
+const double kButtonHeight = 72.0;
+
 //Horizontal spacing
 const Widget horizontalSpaceTiny = SizedBox(width: 5.0);
 const Widget horizontalSpaceSmall = SizedBox(width: 10.0);
