@@ -1,2 +1,4 @@
-const String baseUrl = "http://www.omdbapi.com/";
-const String apiKey = "b9bd48a6";
+class MyApiSettings {
+  static const String baseUrl = "http://www.omdbapi.com/";
+  static const String apiKey = 'b9bd48a6';
+}
